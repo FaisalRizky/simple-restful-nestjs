@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "c4619a62-4b7b-4574-98df-e21c63d3b401",
+		"name": "Article",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create New Article",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"author\": \"Faisal\",\r\n    \"title\" : \"My Second Nest JS App\",\r\n    \"body\"  : \"This is my First Nest Js App\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/articles",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Article",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/articles",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"articles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Article By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/articles/3",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"articles",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find By Filter",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/articles/filter?author=Faisal&query=First",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"articles",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "author",
+							"value": "Faisal"
+						},
+						{
+							"key": "query",
+							"value": "First"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:3000"
+		},
+		{
+			"key": "host",
+			"value": "https://nestjsapi12.herokuapp.com",
+			"disabled": true
+		}
+	]
+}
